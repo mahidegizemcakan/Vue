@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js | </title>
+        <title>ilk örnek</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+    </head>
+    <body>
+        <div id="deneme">
+            <button @click="showBox =!showBox">Göster/Gizle</button>
+            <!-- v-if karşısındaki şart sağlanmışsa göster yada gösterme -->
+
+            <p v-if="showBox">Bu sayfa açıldığında gösterilicek..</p>
+            <p v-else-if="!showBox">Bu sayfa açıldığında gösterilmiyecek. Buton yardımıyla gözükücez..</p>
+            <p v-else="showBox">Aksi halde gözükecek bölüm</p>
+        </div>
+    <script>
+            new Vue({
+               el : "#deneme",
+               data:{
+                showBox : false,
+                age: 19
+               }
+            });
+        </script>
+    </body>
+    </html>

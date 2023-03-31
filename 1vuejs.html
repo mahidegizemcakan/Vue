@@ -1,0 +1,39 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js | </title>
+        <title>ilk örnek</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="deneme">
+            <h1>{{title}}</h1>
+            <button>{{ buttonTitle }}</button>
+            <p>{{paragraf}}</p>
+            <p v-text="paragraf"></p>
+            <!-- <a v-bind:href="link" v-bind:data-id="dataId">Videoyoutube</a> -->
+            <a :href="link" v-bind:data-id="dataId">Videoyoutube</a>
+            <!-- v-bind: var olan yada olmayan atributleri ekleriz. -->
+            <p v-html="details"></p>
+            
+        </div>
+    <script>
+            new Vue({
+                el: "#deneme",
+                data: {
+                    title: "Başlık",
+                    buttonTitle : "Tikla Gelsin ",
+                    paragraf: "Lorem ipsum",
+                    link :"https://www.youtube.com/watch?v=G-oxmvgVpZ4&t=1162s",
+                    dataId : "1",
+                    details : "<b>Bu bir haber detayıdir</b>"
+                }
+            })
+        </script>
+    </body>
+    </html>

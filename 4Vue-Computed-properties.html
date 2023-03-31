@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js | </title>
+        <title>ilk örnek</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="deneme">
+            <input type="text" v-model="age" >
+            <p>JavaScript : {{age>= 18 ? 'Reşittir' : 'Degildir...' }}</p>
+            <p> Method : {{ageWriter()}}</p>
+            <hr>
+            <p> Computed : {{ ageWriterComp  }}</p>
+            <p>{{sayi}}</p>
+            <button @click="sayi++">Sayı Arttır..</button>
+           
+        </div>
+    <script>
+            new Vue({
+               el : "#deneme",
+               data:{
+                   age:0,
+                   sayi:0
+               },
+               methods :{
+                ageWriter(){
+                    console.log("methods Çalıstı.. ")
+                  return  this.age>= 18 ? 'Reşittir' : 'Degildir...'
+                }
+               },
+            //    Computed: otomatik dönüş yapar method olarak ,ayrıca computed method gibi paranteze ihtiyaç yoktur kendiliğinden çalışır.
+            computed :{
+                ageWriterComp(){
+                    console.log("Computed Çalişti..")
+                    return  this.age>= 18 ? 'Reşittir' : 'Degildir...'
+                }
+            }
+            });
+        </script>
+    </body>
+    </html>
